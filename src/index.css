@@ -5,6 +5,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --background: #1c1c21;
+  --background-alt: #131316;
+  --background-element: #2f2f37;
+  --offset-base-variable: 2px;
+  --offset-base-size: 4px;
+  --top-constructor-item-border-radius: 88px 88px 40px 40px;
+  --bottom-constructor-item-border-radius: 40px 40px 88px 88px;
+  --common-border-radius: 64px;
+  --common-border-radius-s: 40px;
+  --text-shadow: 0px 0px 16px rgb(51 51 255 / 25%),
+    0px 0px 8px rgb(51 51 255 / 25%), 0px 4px 32px rgb(51 51 255 / 50%);
+  --shadow-box-color_modal: rgb(0, 0, 0, 0.04);
+  --border-color_modal: rgb(76, 76, 255, 0.2);
+  --bg-color_overlay: rgb(0, 0, 0, 0.6);
+  --bg-color_element: #1c1c21;
+  --text-color_ready: #00cccc;
+  --gradient-color_1: #4c4cff;
+  --gradient-color_2: #801ab2;
+  --text-primary-color: #fff;
+  --text-inactive-color: #8585ad;
+  --colors-interface-accent: #4c4cff;
+  --colors-interface-error: #e52b1a;
+  --colors-interface-success: #0cc;
+  --colors-button-inactive: #3a3a55;
+  --common-transition: all 0.4s ease-in;
+  --opacity-transition: opacity 0.4s ease-in;
+  --opacity: 0.7;
 }
 
 code {
