@@ -1,4 +1,4 @@
-import { Action } from 'redux';
+import type { Action } from 'redux';
 
 interface IReview {
   name: string;
@@ -34,7 +34,7 @@ interface IHeaderState {
 }
 
 interface IMainProps {
-  reviews: IReview[];
+  reviews: { reviews: IReview[] };
 }
 
 interface IMainState {

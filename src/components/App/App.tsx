@@ -9,14 +9,12 @@ import style from './App.module.css';
 
 class App extends Component {
   componentDidMount(): void {
-    const { dispatch } = store;
-    dispatch(fetchReviews());
+    store.dispatch(fetchReviews());
   }
 
   onLanguageChange = (selectedLanguage: string) => {
-    const { dispatch } = store;
-    dispatch(setSelectedLanguage({ selectedLanguage: selectedLanguage }));
-    dispatch(fetchReviews());
+    store.dispatch(setSelectedLanguage({ selectedLanguage: selectedLanguage }));
+    store.dispatch(fetchReviews());
   };
 
   render(): ReactNode {

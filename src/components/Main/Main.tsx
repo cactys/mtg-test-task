@@ -12,7 +12,7 @@ class Main extends Component<IMainProps> {
   };
 
   render() {
-    const { reviews } = this.props;
+    const { reviews } = this.props.reviews;
     const { currentPage } = this.state;
 
     const reviewsPerPage = 10;
@@ -26,16 +26,17 @@ class Main extends Component<IMainProps> {
       Object.values(reviews).length / reviewsPerPage
     );
 
-    console.log(reviews.length);
-
-    const pagNumbers = [];
+    const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
-      pagNumbers.push(i);
+      pageNumbers.push(i);
     }
+
+    console.log(reviews);
+
     return (
       <main>
         <ul>
-          {reviews.map((review, index) => {
+          {paginationReviews.map((review, index) => {
             return (
               <li key={index}>
                 <p>{review.name}</p>
@@ -45,6 +46,15 @@ class Main extends Component<IMainProps> {
             );
           })}
         </ul>
+        <div>
+          {pageNumbers.map((page) => {
+            return (
+              <button key={page} onClick={() => this.handlePageChange(page)}>
+                {page}
+              </button>
+            );
+          })}
+        </div>
       </main>
     );
   }

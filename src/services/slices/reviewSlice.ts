@@ -2,7 +2,6 @@ import { createSlice, isRejectedWithValue } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import {
   IFetchReviewsFulfilledAction,
-  IReview,
   IReviewsInitialState,
 } from '../interfaces';
 import { fetchReviews } from '../thunk/fetchReviews';
@@ -14,11 +13,7 @@ const initialState: IReviewsInitialState = {
 const reviewSlice = createSlice({
   name: 'reviews',
   initialState,
-  reducers: {
-    setReviews(state, action: PayloadAction<IReview>) {
-      state.reviews.push(action.payload);
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchReviews.pending, (state: IReviewsInitialState) => {
@@ -42,5 +37,4 @@ const reviewSlice = createSlice({
   },
 });
 
-export const { setReviews } = reviewSlice.actions;
 export default reviewSlice.reducer;
