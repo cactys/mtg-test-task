@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { IMainProps, IMainState, IReview } from '../../services/interfaces';
 
 import style from './Main.module.css';
+import { BackButton } from '../../UI/BackButton/BackButton';
 
 class Main extends Component<IMainProps> {
   state: IMainState = {
@@ -49,7 +50,11 @@ class Main extends Component<IMainProps> {
           })}
         </ul>
         <div className={style.paginationContainer}>
-          
+          <BackButton
+            currentPage={currentPage}
+            handlePageChange={this.handlePageChange}
+            pageNumbers={pageNumbers}
+          />
           {pageNumbers.map((page) => {
             return (
               <button

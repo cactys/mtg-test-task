@@ -43,7 +43,7 @@ interface IMainState {
 
 interface IButtonProps {
   currentPage: number;
-  pageNumbers: [];
+  pageNumbers: number[];
   handlePageChange: (page: number) => void;
 }
 
