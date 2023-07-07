@@ -1,8 +1,10 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
 body {
+  background-color: var(--background);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --background: #1c1c21;
@@ -14,16 +16,17 @@ body {
   --bottom-constructor-item-border-radius: 40px 40px 88px 88px;
   --common-border-radius: 64px;
   --common-border-radius-s: 40px;
+  --common-border-radius-xs: 5px;
   --text-shadow: 0px 0px 16px rgb(51 51 255 / 25%),
     0px 0px 8px rgb(51 51 255 / 25%), 0px 4px 32px rgb(51 51 255 / 50%);
   --shadow-box-color_modal: rgb(0, 0, 0, 0.04);
   --border-color_modal: rgb(76, 76, 255, 0.2);
   --bg-color_overlay: rgb(0, 0, 0, 0.6);
-  --bg-color_element: #1c1c21;
   --text-color_ready: #00cccc;
   --gradient-color_1: #4c4cff;
   --gradient-color_2: #801ab2;
   --text-primary-color: #fff;
+  --text-second-color: #daf6ff;
   --text-inactive-color: #8585ad;
   --colors-interface-accent: #4c4cff;
   --colors-interface-error: #e52b1a;

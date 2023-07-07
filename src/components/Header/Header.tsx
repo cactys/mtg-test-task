@@ -34,23 +34,27 @@ class Header extends Component<IHeaderProps> {
     const { currentTime, selectedLanguage } = this.state;
 
     return (
-      <div>
-        <img src={logo} alt="logo" className={style.logo} />
-        <select
-          tabIndex={1}
-          value={selectedLanguage}
-          onChange={this.handleLanguageChange}
-          className={style.select}
-        >
-          <option value="ru" className={style.option}>
-            RU
-          </option>
-          <option value="en" className={style.option}>
-            EN
-          </option>
-        </select>
-        <div>{currentTime}</div>
-      </div>
+      <header className={style.header}>
+        <div className={style.container}>
+          <div className={style.clockContainer}>
+            <span className={style.clock}>{currentTime}</span>
+          </div>
+          <img src={logo} alt="logo" className={style.logo} />
+          <div className={style.selectContainer}>
+            <div className={style.selectContent}>
+              <select
+                tabIndex={1}
+                value={selectedLanguage}
+                onChange={this.handleLanguageChange}
+                className={style.select}
+              >
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </header>
     );
   }
 }

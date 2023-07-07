@@ -1,0 +1,116 @@
+.container {
+  margin: 0;
+}
+
+.reviews {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  max-width: 680px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+  padding: 12px;
+  box-sizing: border-box;
+  background-color: var(--background-element);
+  border-radius: var(--common-border-radius-xs);
+  box-shadow: 20px 20px 22px var(--shadow-box-color_modal);
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.7;
+}
+
+.reviewDescription {
+  margin: 0;
+  padding: 0 0 12px;
+  display: flex;
+  min-height: 68px;
+  border-bottom: 1px solid var(--bg-color_overlay);
+  text-align: start;
+  text-indent: 30px;
+}
+
+.userData {
+  padding: 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reviewName {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  margin: 0;
+}
+
+.reviewDate {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-inactive-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.paginationContainer {
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationButton {
+  border: none;
+  font-size: 13px;
+  margin: 0 6px;
+  border-radius: 6px;
+  color: var(--text-second-color);
+  background-color: var(--background-alt);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+  transition: var(--common-transition);
+}
+
+.paginationButton:hover {
+  background-color: var(--background-element);
+}
+
+.arrowButton {
+  border: none;
+  font-size: 13px;
+  margin: 0 6px;
+  border-radius: 6px;
+  color: var(--text-second-color);
+  background-color: var(--background-alt);
+  width: 48px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+  transition: var(--common-transition);
+}
+
+.arrowButton:hover {
+  background-color: var(--background-element);
+}
+
+.activeButton {
+  background-color: var(--background-element);
+}
+
+.disableButton {
+  cursor: default;
+  background-color: var(--colors-button-inactive);
+  opacity: 0.8;
+  pointer-events: none;
+}
