@@ -1,6 +1,9 @@
 import { Component } from 'react';
+import { IButtonProps } from '../../services/interfaces';
 
-class backButton extends Component {
+import style from './BackButton.module.css';
+
+class BackButton extends Component<IButtonProps> {
   render() {
     return (
       <button
@@ -18,4 +21,4 @@ class backButton extends Component {
   }
 }
 
-export { backButton };
+export { BackButton };

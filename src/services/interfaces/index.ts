@@ -41,6 +41,12 @@ interface IMainState {
   currentPage: number;
 }
 
+interface IButtonProps {
+  currentPage: number;
+  pageNumbers: [];
+  handlePageChange: (page: number) => void;
+}
+
 export type {
   IReview,
   IReviewsInitialState,
@@ -51,4 +57,5 @@ export type {
   IHeaderState,
   IMainProps,
   IMainState,
+  IButtonProps,
 };

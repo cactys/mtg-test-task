@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class forwardButton extends Component {
+class ForwardButton extends Component {
   render() {
     return <div></div>;
   }
 }
 
-export { forwardButton };
+export { ForwardButton };
