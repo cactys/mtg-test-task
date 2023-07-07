@@ -1,9 +1,14 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { IMainProps, IMainState, IReview } from '../../services/interfaces';
+import { IMainProps, IMainState } from '../../services/interfaces';
 
-import style from './Main.module.css';
+import { countPage, paginationPage } from '../../utils/utils';
+import { Card } from '../../UI/Card/Card';
+import { Button } from '../../UI/Button/Button';
 import { BackButton } from '../../UI/BackButton/BackButton';
+import { ForwardButton } from '../../UI/ForwardButton/ForwardButton';
+import { Preloader } from '../../UI/Preloader/Preloader';
+import style from './Main.module.css';
 
 class Main extends Component<IMainProps> {
   state: IMainState = {
@@ -15,38 +20,19 @@ class Main extends Component<IMainProps> {
   };
 
   render() {
-    const { reviews } = this.props.reviews;
+    const { reviews, status } = this.props.reviews;
     const { currentPage } = this.state;
 
-    const reviewsPerPage = 10;
-    const startIndex = (currentPage - 1) * reviewsPerPage;
-    const endIndex = startIndex + reviewsPerPage;
-    const paginationReviews = Object.values(reviews).slice(
-      startIndex,
-      endIndex
-    );
-    const totalPages = Math.ceil(
-      Object.values(reviews).length / reviewsPerPage
-    );
+    const paginationReviews = paginationPage(currentPage, reviews);
 
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(i);
-    }
+    const pageNumbers: number[] = countPage(10, reviews);
 
     return (
       <main className={style.container}>
         <ul className={style.reviews}>
+          {status === 'loading' ? <Preloader /> : null}
           {paginationReviews.map((review, index) => {
-            return (
-              <li key={index} className={style.review}>
-                <p className={style.reviewDescription}>{review.review}</p>
-                <div className={style.userData}>
-                  <p className={style.reviewName}>{review.name}</p>
-                  <p className={style.reviewDate}>{review.date}</p>
-                </div>
-              </li>
-            );
+            return <Card key={index} review={review} />;
           })}
         </ul>
         <div className={style.paginationContainer}>
@@ -57,28 +43,19 @@ class Main extends Component<IMainProps> {
           />
           {pageNumbers.map((page) => {
             return (
-              <button
+              <Button
                 key={page}
-                onClick={() => this.handlePageChange(page)}
-                className={`${currentPage === page ? style.activeButton : ''} ${
-                  style.paginationButton
-                }`}
-              >
-                {page}
-              </button>
+                page={page}
+                currentPage={currentPage}
+                handlePageChange={this.handlePageChange}
+              />
             );
           })}
-          <button
-            onClick={() => this.handlePageChange(currentPage + 1)}
-            className={`${
-              currentPage >= pageNumbers.length || currentPage < 1
-                ? style.disableButton
-                : ''
-            } ${style.arrowButton}`}
-            disabled={currentPage >= pageNumbers.length || currentPage < 1}
-          >
-            &rArr;
-          </button>
+          <ForwardButton
+            currentPage={currentPage}
+            handlePageChange={this.handlePageChange}
+            pageNumbers={pageNumbers}
+          />
         </div>
       </main>
     );

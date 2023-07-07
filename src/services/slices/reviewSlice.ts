@@ -8,6 +8,7 @@ import { fetchReviews } from '../thunk/fetchReviews';
 
 const initialState: IReviewsInitialState = {
   reviews: [],
+  status: '',
 };
 
 const reviewSlice = createSlice({

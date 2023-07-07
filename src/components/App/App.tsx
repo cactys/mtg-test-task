@@ -1,9 +1,10 @@
 import { Component, ReactNode } from 'react';
 import { store } from '../../services';
+import { fetchReviews } from '../../services/thunk/fetchReviews';
 import { setSelectedLanguage } from '../../services/slices/languageSlice';
+
 import { Header } from '../Header/Header';
 import Main from '../Main/Main';
-import { fetchReviews } from '../../services/thunk/fetchReviews';
 
 import style from './App.module.css';
 

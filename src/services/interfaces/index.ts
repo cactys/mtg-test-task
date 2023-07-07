@@ -34,17 +34,28 @@ interface IHeaderState {
 }
 
 interface IMainProps {
-  reviews: { reviews: IReview[] };
+  reviews: {
+    reviews: IReview[];
+    status: string;
+  };
 }
 
 interface IMainState {
   currentPage: number;
 }
 
-interface IButtonProps {
+interface IPageButtonProps {
   currentPage: number;
-  pageNumbers: number[];
   handlePageChange: (page: number) => void;
+  page: number;
+}
+
+interface IArrowButtonProps extends Omit<IPageButtonProps, 'page'> {
+  pageNumbers: number[];
+}
+
+interface ICardProps {
+  review: IReview;
 }
 
 export type {
@@ -57,5 +68,7 @@ export type {
   IHeaderState,
   IMainProps,
   IMainState,
-  IButtonProps,
+  IArrowButtonProps,
+  IPageButtonProps,
+  ICardProps,
 };

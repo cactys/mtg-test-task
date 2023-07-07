@@ -1,8 +1,8 @@
 import { Component, ReactNode, ChangeEvent } from 'react';
+import { IHeaderProps, IHeaderState } from '../../services/interfaces';
 
 import logo from '../../images/logo.png';
 import style from './Header.module.css';
-import { IHeaderProps, IHeaderState } from '../../services/interfaces';
 
 class Header extends Component<IHeaderProps> {
   interval: NodeJS.Timeout | undefined;
