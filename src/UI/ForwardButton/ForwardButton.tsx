@@ -10,12 +10,10 @@ class ForwardButton extends Component<IArrowButtonProps> {
     return (
       <button
         onClick={() => handlePageChange(currentPage + 1)}
-        className={`${
-          currentPage >= pageNumbers.length || currentPage < 1
-            ? style.disableButton
-            : ''
-        } ${style.button}`}
-        disabled={currentPage >= pageNumbers.length || currentPage < 1}
+        className={`${currentPage === 0 ? style.disableButton : ''} ${
+          style.button
+        }`}
+        disabled={currentPage === 0}
       >
         &rArr;
       </button>

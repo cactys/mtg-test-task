@@ -11,11 +11,9 @@ class BackButton extends Component<IArrowButtonProps> {
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         className={`${
-          currentPage <= 1 || currentPage > pageNumbers?.length
-            ? style.disableButton
-            : ''
+          currentPage === pageNumbers?.length ? style.disableButton : ''
         } ${style.button}`}
-        disabled={currentPage <= 1 || currentPage > pageNumbers?.length}
+        disabled={currentPage === pageNumbers?.length}
       >
         &lArr;
       </button>
